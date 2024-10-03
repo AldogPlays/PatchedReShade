@@ -11,10 +11,11 @@
 
 ## 🔧 How to Install
 
-1. **Download** the patched ReShade `.zip` file from the release page.
-2. **Extract** the files into your game’s root folder (where the game’s `.exe` is located).
-3. **Replace** any existing ReShade files with the patched versions.
-4. Launch the game and enjoy enhanced visuals with depth-based effects.
+1. **Download** the **Patched ReShade Installer** from the [Releases](https://github.com/YourGitHub/PatchedReShade/releases) page.
+2. **Run** the installer and follow the on-screen instructions to select the game you want to apply ReShade to.
+3. **Choose** the rendering API used by your game (e.g., DirectX, OpenGL, Vulkan) when prompted.
+4. Complete the installation process as you would with a normal ReShade installation.
+5. Launch your game, and you should now have full access to depth-based effects in multiplayer.
 
 ## 🛠️ Compatibility
 
