@@ -1,47 +1,28 @@
-ReShade
-=======
+# 🚀 PatchedReShade v1.0
 
-This is a generic post-processing injector for games and video software. It exposes an automated way to access both frame color and depth information and a custom shader language called ReShade FX to write effects like ambient occlusion, depth of field, color correction and more which work everywhere.
+**PatchedReShade** is a modified version of ReShade designed to unlock the **depth buffer** in online games by disabling network traffic checks. This re-compilation allows you to enjoy enhanced post-processing effects like **depth of field**, **SSAO**, and **bloom** in multiplayer games, without the usual limitations.
 
-ReShade can optionally load **add-ons**, DLLs that make use of the ReShade API to extend functionality of both ReShade and/or the application ReShade is being applied to. To get started on how to write your own add-on, check out the [API reference](REFERENCE.md).
+## 🌟 Features
 
-The ReShade FX shader compiler contained in this repository is standalone, so can be integrated into other projects as well. Simply add all `source/effect_*.*` files to your project and use it similar to the [fxc example](tools/fxc.cpp).
+- **🔓 Depth Buffer Access**: Use ReShade’s depth-based effects in online multiplayer games without restrictions.
+- **⚡ Bypassed Network Traffic Check**: This patch removes the network traffic check that blocks depth effects in online modes.
+- **🎮 Enhanced Graphics**: Unlock advanced visual effects like SSAO, depth of field, and more, even while playing online.
+- **🚀 Easy Setup**: Drop-in replacement for standard ReShade—no complex installation required.
 
-## Building
+## 🔧 How to Install
 
-You'll need Visual Studio 2017 or higher to build ReShade and Python for the `gl3w` dependency.
+1. **Download** the patched ReShade `.zip` file from the release page.
+2. **Extract** the files into your game’s root folder (where the game’s `.exe` is located).
+3. **Replace** any existing ReShade files with the patched versions.
+4. Launch the game and enjoy enhanced visuals with depth-based effects.
 
-1. Clone this repository including all Git submodules\
-```git clone --recurse-submodules https://github.com/crosire/reshade```
-2. Open the Visual Studio solution
-3. Select either the `32-bit` or `64-bit` target platform and build the solution.\
-   This will build ReShade and all dependencies. To build the setup tool, first build the `Release` configuration for both `32-bit` and `64-bit` targets and only afterwards build the `Release Setup` configuration (does not matter which target is selected then).
+## 🛠️ Compatibility
 
-A quick overview of what some of the source code files contain:
+This patch should work with most online multiplayer games, as long as they support ReShade. However, some anti-cheat systems may block ReShade entirely—check with your specific game’s policies.
 
-|File                                                                  |Description                                                            |
-|----------------------------------------------------------------------|-----------------------------------------------------------------------|
-|[dll_log.cpp](source/dll_log.cpp)                                     |Simple file logger implementation                                      |
-|[dll_main.cpp](source/dll_main.cpp)                                   |Main entry point (and optional test application)                       |
-|[dll_resources.cpp](source/dll_resources.cpp)                         |Access to DLL resource data (e.g. built-in shaders)                    |
-|[effect_lexer.cpp](source/effect_lexer.cpp)                           |Lexical analyzer for C-like languages                                  |
-|[effect_parser_stmt.cpp](source/effect_parser_stmt.cpp)               |Parser for the ReShade FX shader language                              |
-|[effect_preprocessor.cpp](source/effect_preprocessor.cpp)             |C-like preprocessor implementation                                     |
-|[hook.cpp](source/hook.cpp)                                           |Wrapper around MinHook which tracks associated function pointers       |
-|[hook_manager.cpp](source/hook_manager.cpp)                           |Automatic hook installation based on DLL exports                       |
-|[input.cpp](source/input.cpp)                                         |Keyboard and mouse input management and window message queue hooks     |
-|[runtime.cpp](source/runtime.cpp)                                     |Core ReShade runtime including effect and preset management            |
-|[runtime_gui.cpp](source/runtime_gui.cpp)                             |Overlay rendering and everything user interface related                |
+---
 
-## Contributing
+## 📜 License
 
-Any contributions to the project are welcomed, it's recommended to use GitHub [pull requests](https://help.github.com/articles/using-pull-requests/).
-
-## Feedback and Support
-
-See the [ReShade Forum](https://reshade.me/forum) and [Discord](https://discord.gg/PrwndfH) server for feedback and support.
-
-## License
-
-ReShade is licensed under the terms of the [BSD 3-clause license](LICENSE.md).\
+ReShade is licensed under the terms of the BSD 3-clause license.  
 Some source code files are dual-licensed and are also available under the terms of the MIT license, when stated as such at the top of those files.
